@@ -671,6 +671,10 @@ sentieon/insertsize:
 sentieon/gcbias:
   contents: "--algo GCBias"
   shared: true
+sentieon/hsmetrics:
+  contents: "--algo HsMetricAlgo"
+  shared: true
+  num_lines: 5
 seqyclean:
   fn: "*_SummaryStatistics.tsv"
 sexdeterrmine:

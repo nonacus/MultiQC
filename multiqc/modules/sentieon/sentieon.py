@@ -12,6 +12,7 @@ from multiqc.modules.base_module import BaseMultiqcModule
 from . import AlignmentSummaryMetrics
 from . import GcBiasMetrics
 from . import InsertSizeMetrics
+from . import HsMetrics
 
 
 # Initialise the logger
@@ -52,6 +53,10 @@ class MultiqcModule(BaseMultiqcModule):
         n["InsertSizeMetrics"] = InsertSizeMetrics.parse_reports(self)
         if n["InsertSizeMetrics"] > 0:
             log.info("Found {} InsertSizeMetrics reports".format(n["InsertSizeMetrics"]))
+
+        n["HsMetrics"] = HsMetrics.parse_reports(self)
+        if n["HsMetrics"] > 0:
+            log.info("Found {} HsMetrics reports".format(n["HsMetrics"]))
 
         # Exit if we didn't find anything
         if sum(n.values()) == 0:

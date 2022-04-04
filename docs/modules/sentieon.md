@@ -19,3 +19,40 @@ Supported commands:
 - `InsertSizeMetrics`
 - `GcBiasMetrics`
 - `AlignmentSummaryMetrics`
+- `HsMetricsAlgo`
+
+#### HsMetrics Compatibility
+
+HsMetrics can be customised as per the Picard implementation, but operates as a separate module. Because of this, if both are in the same set of MultiQC data, results from Picard and Sentieon HsMetrics will appear in the general stats table. Both can be customised separately with the Sentieon implementation using the config ID `sentieon_config`. E.g., the example in the Picard CollecHsMetrics docs:
+
+```yaml
+picard_config:
+  general_stats_target_coverage:
+    - 10
+    - 50
+  HsMetrics_table_cols:
+    - NEAR_BAIT_BASES
+    - OFF_BAIT_BASES
+    - ON_BAIT_BASES
+  HsMetrics_table_cols_hidden:
+    - MAX_TARGET_COVERAGE
+    - MEAN_BAIT_COVERAGE
+    - MEAN_TARGET_COVERAGE
+```
+
+becomes:
+
+```yaml
+sentieon_config:
+  general_stats_target_coverage:
+    - 10
+    - 50
+  HsMetrics_table_cols:
+    - NEAR_BAIT_BASES
+    - OFF_BAIT_BASES
+    - ON_BAIT_BASES
+  HsMetrics_table_cols_hidden:
+    - MAX_TARGET_COVERAGE
+    - MEAN_BAIT_COVERAGE
+    - MEAN_TARGET_COVERAGE
+```
