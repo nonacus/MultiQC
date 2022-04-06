@@ -175,6 +175,11 @@ def parse_reports(self):
         self.add_section(
             name="HSMetrics",
             anchor="sentieon_hsmetrics",
+            description="HSMetrics shows hybrid-selection metrics for a SAM or BAM file generated from capture sequencing data.",
+            helptext="""
+            This table shows metrics for a hybrid capture library. It is based on the Picard CollectHsMetrics algorithm. A number 
+            of different values are shown here, for full definitions please see the [Picard Metrics Definitions page](https://broadinstitute.github.io/picard/picard-metric-definitions.html#HsMetrics).
+            """,
             plot=table.plot(
                 data,
                 _get_table_headers(data),
