@@ -1,5 +1,9 @@
 # ![MultiQC](docs/images/MultiQC_logo.png#gh-light-mode-only) ![MultiQC](docs/images/MultiQC_logo_darkbg.png#gh-dark-mode-only)
 
+### Nonacus Note
+
+This is a custom branch of MultiQC which parses MosDepth output slightly differently, for the purposes of putting better data into the general stats table. The original plan was to contribute this back to MultiQC but I think it might not work out because we don't have enough time to fix it properly. In future, look into improving/updating how we add this data to the MultiQC general_stats table.
+
 ### Aggregate bioinformatics results across many samples into a single report
 
 ##### Find [documentation](http://multiqc.info/docs) and [example reports](http://multiqc.info/examples/rna-seq/multiqc_report.html) at [http://multiqc.info](http://multiqc.info)
