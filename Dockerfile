@@ -5,7 +5,7 @@ LABEL author="Phil Ewels" \
       description="MultiQC" \
       maintainer="phil.ewels@scilifelab.se"
 
-RUN apk add --no-cache bash
+RUN apk add --no-cache bash libc6-compat
 
 # Add the MultiQC source files to the container
 ADD . /usr/src/multiqc
@@ -14,6 +14,5 @@ WORKDIR /usr/src/multiqc
 # Install MultiQC
 RUN python -m pip install .
 
-# Set up entrypoint and cmd for easy docker usage
-ENTRYPOINT [ "multiqc" ]
-CMD [ "." ]
+# cmd for easy docker usage
+CMD [ "multiqc" ]
